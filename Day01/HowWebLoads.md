@@ -5,31 +5,51 @@ Overview of how webpages load:
 3. Download Script
 4. Execute Script
 
+🟢 HTML Parsing
+🔵 Script Download
+🔴 Script Execution
+
+─────────────────────────────────────────────────────────────
+
 1️⃣ <script> in <head>
 HTML: 🟢🟢 🔴 🟢🟢🟢
 Script: 🔵🔴
-Effect:
-Parsing stops while script is downloading and executing.
+
+✅ Effect:
+Parsing stops while the script is downloaded and executed.
+Can **block rendering** and delay First Paint.
+
+─────────────────────────────────────────────────────────────
 
 2️⃣ <script> at end of <body>
 HTML: 🟢🟢🟢🟢🟢🟢
 Script: 🔵🔴
-Effect:
-Parsing completes first, then script loads and runs.
+
+✅ Effect:
+HTML parsing completes first.
+Script loads and runs afterward.
+Safer for performance.
+
+─────────────────────────────────────────────────────────────
 
 3️⃣ <script async>
 HTML: 🟢🟢🟢🟢🟢🟢
 Script: 🔵---🔴
-Effect:
-Script downloads in parallel.
-Executes as soon as it’s ready (can interrupt parsing).
+
+✅ Effect:
+Script downloads **in parallel**.
+Executes as soon as ready—can interrupt parsing unpredictably.
+
+─────────────────────────────────────────────────────────────
 
 4️⃣ <script defer>
 HTML: 🟢🟢🟢🟢🟢🟢
 Script: 🔵-------🔴
-Effect:
-Script downloads in parallel.
-Executes after parsing is complete.
+
+✅ Effect:
+Downloads in parallel.
+Executes **after parsing completes**.
+Best for non-blocking scripts.
 
 Chatgpt :
 
