@@ -162,6 +162,8 @@ function secondFunction() {
 function thirdFunction() {
     console.log("This is the third function");
 }
+
+
 // Calling the first function will create a call stack
 firstFunction(); // This will call the first function, which calls the second function, which calls the third function
 // Call stack will look like this:
