@@ -52,3 +52,14 @@ function contextFunction() {
 // 2. The value of `this`: It refers to the object that the function is called on.
 // 3. The arguments object: It contains the arguments passed to the function.
 // 4. The return value: It contains the value returned by the function.
+
+var name = "Global Name";
+
+function greet() {
+    var innerName= "Inner Name"; // Local variable
+    console.log("Hello, " + name); // Accessing global variable
+}
+
+// greet(); 
+// if you don’t invoke the function, innerName is not created at all.
+// JavaScript only creates variables in a function's Execution Context when the function is actually called.
