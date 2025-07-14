@@ -60,6 +60,9 @@ function greet() {
     console.log("Hello, " + name); // Accessing global variable
 }
 
-// greet(); 
+// greet();
 // if you don’t invoke the function, innerName is not created at all.
 // JavaScript only creates variables in a function's Execution Context when the function is actually called.
+
+
+
